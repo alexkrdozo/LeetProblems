@@ -1,13 +1,7 @@
-ransomNote = "aa"
-magazine = "aab"
-count = 0
-for char in ransomNote:
-    if char in magazine:
-        count += 1
-
-if count == len(ransomNote):
-    print("True")
-else:
-    print("False")
-       
-
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        for char in ransomNote:
+            if char not in magazine:
+                return False
+            magazine = magazine.replace(char, "", 1)
+        return True
